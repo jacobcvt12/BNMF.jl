@@ -50,10 +50,10 @@ function GaPNMF(X; K=100, a=0.1, b=0.1, α=1.0, smoothness=100)
     gamma = Distributions.Gamma(smoothness, 1.0/smoothness)
 
     GaPNMF(Y, K, a, b, α, 
-           10000*rand(gamma, (M, K)),
-           10000*rand(gamma, (M, K)),
-           10000*rand(gamma, (K, N)),
-           10000*rand(gamma, (K, N)),
+           10000*rand(gamma, M, K),
+           10000*rand(gamma, M, K),
+           10000*rand(gamma, K, N),
+           10000*rand(gamma, K, N),
            K*10000*rand(gamma, K),
            1.0/K*10000*rand(gamma, K),
            zeros(M, K),
